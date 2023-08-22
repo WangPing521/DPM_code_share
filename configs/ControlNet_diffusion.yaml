@@ -1,0 +1,41 @@
+Data:
+  name: mmwhs_new # BraTS20  mmwhs  mmwhs_new
+
+Optim:
+  lr: 0.0001
+  name: Adam # Radam
+
+Domain:
+  source: MR # t2 t1ce flair  MR
+  target: CT # t1ce flair  CT
+
+DataLoader:
+  batch_size: 2
+  shuffle: True
+  num_workers: 0
+  pin_memory: False
+
+Trainer:
+  device: cuda
+  max_epoch: 100 # training iterations
+  iterations: 200
+  save_dir: runs #layer group (instance)
+  checkpoint_path: runs
+
+Inference:
+  DPM_checkpoint: ../../Daily_Research/Diffusion_TestTImeAdaptation/Source_Diffusion_Model/DPM_MR_200FR_layernorm
+
+Diffusion:
+  img_size: 256   # mmwhs: 256   Brain: 144
+  group: 1 # layer_norm=1 group_norm=32 (previous I used)
+  input_dim: 1
+  timesteps: 200 # 200 300 500
+  model_channels: 64
+  num_heads: 1
+  loss_type: L2 # L1 L2
+  beta_scheduler: linear # linear  cosine sqrt_linear sqrt
+  log_every_t: 1000
+  reverse_step: 10
+  v_posterior: 0
+
+seed: 10
