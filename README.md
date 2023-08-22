@@ -24,6 +24,9 @@ create a run.sh file, as follows:
 
 ![img.png](img.png)
 
+Similarly for main_ControlNetDPM.py
+
+![img_1.png](img_1.png)
 
 
 
