@@ -28,7 +28,7 @@ Similarly for main_ControlNetDPM.py
 
 ![img_1.png](img_1.png)
 
-
+## Notes: above is just the brief instruction for the code using. The configuration is not the optimal.
 
 
 
